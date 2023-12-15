@@ -1,0 +1,731 @@
+'*���of ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0x1 (POWERON),boot:0xe (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x170c
+load:0x403cc710,len:0x968
+load:0x403ce710,len:0x2f9c
+entry 0x403cc710
+[0;32mI (30) boot: ESP-IDF v5.1.2-dirty 2nd stage bootloader[0m
+[0;32mI (30) boot: compile time Dec 14 2023 11:53:22[0m
+[0;32mI (30) boot: chip revision: v0.3[0m
+[0;32mI (34) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (39) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32c3: SPI Flash Size : 2MB[0m
+[0;32mI (48) boot: Enabling RNG early entropy source...[0m
+[0;32mI (53) boot: Partition Table:[0m
+[0;32mI (57) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (64) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (72) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (79) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (87) boot: End of partition table[0m
+[0;32mI (91) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=08720h ( 34592) map[0m
+[0;32mI (105) esp_image: segment 1: paddr=00018748 vaddr=3fc8a600 size=01148h (  4424) load[0m
+[0;32mI (108) esp_image: segment 2: paddr=00019898 vaddr=40380000 size=06780h ( 26496) load[0m
+[0;32mI (121) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=15c44h ( 89156) map[0m
+[0;32mI (139) esp_image: segment 4: paddr=00035c6c vaddr=40386780 size=03e58h ( 15960) load[0m
+[0;32mI (146) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (146) boot: Disabling RNG early entropy source...[0m
+[0;32mI (159) cpu_start: Unicore app[0m
+[0;32mI (159) cpu_start: Pro cpu up.[0m
+[0;32mI (168) cpu_start: Pro cpu start user code[0m
+[0;32mI (168) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (168) cpu_start: Application information:[0m
+[0;32mI (171) cpu_start: Project name:     ESP32c3_test_touch[0m
+[0;32mI (177) cpu_start: App version:      1[0m
+[0;32mI (181) cpu_start: Compile time:     Dec 14 2023 11:53:19[0m
+[0;32mI (187) cpu_start: ELF file SHA256:  f0f220becd52adfa...[0m
+[0;32mI (193) cpu_start: ESP-IDF:          v5.1.2-dirty[0m
+[0;32mI (199) cpu_start: Min chip rev:     v0.3[0m
+[0;32mI (203) cpu_start: Max chip rev:     v0.99 [0m
+[0;32mI (208) cpu_start: Chip rev:         v0.3[0m
+[0;32mI (213) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (220) heap_init: At 3FC8C5A0 len 00033A60 (206 KiB): DRAM[0m
+[0;32mI (226) heap_init: At 3FCC0000 len 0001C710 (113 KiB): DRAM/RETENTION[0m
+[0;32mI (234) heap_init: At 3FCDC710 len 00002950 (10 KiB): DRAM/RETENTION/STACK[0m
+[0;32mI (241) heap_init: At 50000010 len 00001FD8 (7 KiB): RTCRAM[0m
+[0;32mI (248) spi_flash: detected chip: generic[0m
+[0;32mI (252) spi_flash: flash io: dio[0m
+[0;33mW (256) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (269) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (276) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (283) app_start: Starting scheduler on CPU0[0m
+[0;32mI (288) main_task: Started on CPU0[0m
+[0;32mI (288) main_task: Calling app_main()[0m
+[0;32mI (288) main_task: Returned from app_main()[0m
+4 touch
+[0;31mE (106688) TOGGLE LED: : led status before is 0[0m
+[0;31mE (106688) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (107088) TOGGLE LED: : led status before is 1[0m
+[0;31mE (107088) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (107238) TOGGLE LED: : led status before is 0[0m
+[0;31mE (107238) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (107588) TOGGLE LED: : led status before is 1[0m
+[0;31mE (107588) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (107988) TOGGLE LED: : led status before is 0[0m
+[0;31mE (107988) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (108338) TOGGLE LED: : led status before is 1[0m
+[0;31mE (108338) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (108688) TOGGLE LED: : led status before is 0[0m
+[0;31mE (108688) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (108988) TOGGLE LED: : led status before is 1[0m
+[0;31mE (108988) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (109288) TOGGLE LED: : led status before is 0[0m
+[0;31mE (109288) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (109588) TOGGLE LED: : led status before is 1[0m
+[0;31mE (109588) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (109938) TOGGLE LED: : led status before is 0[0m
+[0;31mE (109938) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (110288) TOGGLE LED: : led status before is 1[0m
+[0;31mE (110288) TOGGLE LED: : led status after is 0[0m
+1 touch
+[0;31mE (110988) TOGGLE LED: : led status before is 0[0m
+[0;31mE (110988) TOGGLE LED: : led status after is 1[0m
+1 touch
+[0;31mE (111438) TOGGLE LED: : led status before is 1[0m
+[0;31mE (111438) TOGGLE LED: : led status after is 0[0m
+1 touch
+[0;31mE (111788) TOGGLE LED: : led status before is 0[0m
+[0;31mE (111788) TOGGLE LED: : led status after is 1[0m
+1 touch
+[0;31mE (112138) TOGGLE LED: : led status before is 1[0m
+[0;31mE (112138) TOGGLE LED: : led status after is 0[0m
+1 touch
+[0;31mE (112438) TOGGLE LED: : led status before is 0[0m
+[0;31mE (112438) TOGGLE LED: : led status after is 1[0m
+1 touch
+[0;31mE (112738) TOGGLE LED: : led status before is 1[0m
+[0;31mE (112738) TOGGLE LED: : led status after is 0[0m
+1 touch
+[0;31mE (113038) TOGGLE LED: : led status before is 0[0m
+[0;31mE (113038) TOGGLE LED: : led status after is 1[0m
+1 touch
+[0;31mE (113738) TOGGLE LED: : led status before is 1[0m
+[0;31mE (113738) TOGGLE LED: : led status after is 0[0m
+1 touch
+[0;31mE (114138) TOGGLE LED: : led status before is 0[0m
+[0;31mE (114138) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (114588) TOGGLE LED: : led status before is 1[0m
+[0;31mE (114588) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (114888) TOGGLE LED: : led status before is 0[0m
+[0;31mE (114888) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (115188) TOGGLE LED: : led status before is 1[0m
+[0;31mE (115188) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (115538) TOGGLE LED: : led status before is 0[0m
+[0;31mE (115538) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (115788) TOGGLE LED: : led status before is 1[0m
+[0;31mE (115788) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (115988) TOGGLE LED: : led status before is 0[0m
+[0;31mE (115988) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (116238) TOGGLE LED: : led status before is 1[0m
+[0;31mE (116238) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (116438) TOGGLE LED: : led status before is 0[0m
+[0;31mE (116438) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (116638) TOGGLE LED: : led status before is 1[0m
+[0;31mE (116638) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (116788) TOGGLE LED: : led status before is 0[0m
+[0;31mE (116788) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (116988) TOGGLE LED: : led status before is 1[0m
+[0;31mE (116988) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (117138) TOGGLE LED: : led status before is 0[0m
+[0;31mE (117138) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (117338) TOGGLE LED: : led status before is 1[0m
+[0;31mE (117338) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (117488) TOGGLE LED: : led status before is 0[0m
+[0;31mE (117488) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (117788) TOGGLE LED: : led status before is 1[0m
+[0;31mE (117788) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (117938) TOGGLE LED: : led status before is 0[0m
+[0;31mE (117938) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (118088) TOGGLE LED: : led status before is 1[0m
+[0;31mE (118088) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (118238) TOGGLE LED: : led status before is 0[0m
+[0;31mE (118238) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (118388) TOGGLE LED: : led status before is 1[0m
+[0;31mE (118388) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (118938) TOGGLE LED: : led status before is 0[0m
+[0;31mE (118938) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (120188) TOGGLE LED: : led status before is 1[0m
+[0;31mE (120188) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (120738) TOGGLE LED: : led status before is 0[0m
+[0;31mE (120738) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (121538) TOGGLE LED: : led status before is 1[0m
+[0;31mE (121538) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (121688) TOGGLE LED: : led status before is 0[0m
+[0;31mE (121688) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (121988) TOGGLE LED: : led status before is 1[0m
+[0;31mE (121988) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (122138) TOGGLE LED: : led status before is 0[0m
+[0;31mE (122138) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (122488) TOGGLE LED: : led status before is 1[0m
+[0;31mE (122488) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (122638) TOGGLE LED: : led status before is 0[0m
+[0;31mE (122638) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (122788) TOGGLE LED: : led status before is 1[0m
+[0;31mE (122788) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (122938) TOGGLE LED: : led status before is 0[0m
+[0;31mE (122938) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (123088) TOGGLE LED: : led status before is 1[0m
+[0;31mE (123088) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (123238) TOGGLE LED: : led status before is 0[0m
+[0;31mE (123238) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (123388) TOGGLE LED: : led status before is 1[0m
+[0;31mE (123388) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (123538) TOGGLE LED: : led status before is 0[0m
+[0;31mE (123538) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (123688) TOGGLE LED: : led status before is 1[0m
+[0;31mE (123688) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (123838) TOGGLE LED: : led status before is 0[0m
+[0;31mE (123838) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (123988) TOGGLE LED: : led status before is 1[0m
+[0;31mE (123988) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (124138) TOGGLE LED: : led status before is 0[0m
+[0;31mE (124138) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (124288) TOGGLE LED: : led status before is 1[0m
+[0;31mE (124288) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (124438) TOGGLE LED: : led status before is 0[0m
+[0;31mE (124438) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (124588) TOGGLE LED: : led status before is 1[0m
+[0;31mE (124588) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (124738) TOGGLE LED: : led status before is 0[0m
+[0;31mE (124738) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (124888) TOGGLE LED: : led status before is 1[0m
+[0;31mE (124888) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (125038) TOGGLE LED: : led status before is 0[0m
+[0;31mE (125038) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (125188) TOGGLE LED: : led status before is 1[0m
+[0;31mE (125188) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (125338) TOGGLE LED: : led status before is 0[0m
+[0;31mE (125338) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (125488) TOGGLE LED: : led status before is 1[0m
+[0;31mE (125488) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (125638) TOGGLE LED: : led status before is 0[0m
+[0;31mE (125638) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (125788) TOGGLE LED: : led status before is 1[0m
+[0;31mE (125788) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (125938) TOGGLE LED: : led status before is 0[0m
+[0;31mE (125938) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (126088) TOGGLE LED: : led status before is 1[0m
+[0;31mE (126088) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (126238) TOGGLE LED: : led status before is 0[0m
+[0;31mE (126238) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (126388) TOGGLE LED: : led status before is 1[0m
+[0;31mE (126388) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (126538) TOGGLE LED: : led status before is 0[0m
+[0;31mE (126538) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (126688) TOGGLE LED: : led status before is 1[0m
+[0;31mE (126688) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (126838) TOGGLE LED: : led status before is 0[0m
+[0;31mE (126838) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (126988) TOGGLE LED: : led status before is 1[0m
+[0;31mE (126988) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (127138) TOGGLE LED: : led status before is 0[0m
+[0;31mE (127138) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (127288) TOGGLE LED: : led status before is 1[0m
+[0;31mE (127288) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (127438) TOGGLE LED: : led status before is 0[0m
+[0;31mE (127438) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (127588) TOGGLE LED: : led status before is 1[0m
+[0;31mE (127588) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (127738) TOGGLE LED: : led status before is 0[0m
+[0;31mE (127738) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (127888) TOGGLE LED: : led status before is 1[0m
+[0;31mE (127888) TOGGLE LED: : led status after is 0[0m
+1 touch
+[0;31mE (128688) TOGGLE LED: : led status before is 0[0m
+[0;31mE (128688) TOGGLE LED: : led status after is 1[0m
+1 touch
+[0;31mE (128838) TOGGLE LED: : led status before is 1[0m
+[0;31mE (128838) TOGGLE LED: : led status after is 0[0m
+1 touch
+[0;31mE (128988) TOGGLE LED: : led status before is 0[0m
+[0;31mE (128988) TOGGLE LED: : led status after is 1[0m
+1 touch
+[0;31mE (129138) TOGGLE LED: : led status before is 1[0m
+[0;31mE (129138) TOGGLE LED: : led status after is 0[0m
+1 touch
+[0;31mE (129288) TOGGLE LED: : led status before is 0[0m
+[0;31mE (129288) TOGGLE LED: : led status after is 1[0m
+1 touch
+[0;31mE (129438) TOGGLE LED: : led status before is 1[0m
+[0;31mE (129438) TOGGLE LED: : led status after is 0[0m
+1 touch
+[0;31mE (129588) TOGGLE LED: : led status before is 0[0m
+[0;31mE (129588) TOGGLE LED: : led status after is 1[0m
+1 touch
+[0;31mE (129738) TOGGLE LED: : led status before is 1[0m
+[0;31mE (129738) TOGGLE LED: : led status after is 0[0m
+1 touch
+[0;31mE (129888) TOGGLE LED: : led status before is 0[0m
+[0;31mE (129888) TOGGLE LED: : led status after is 1[0m
+1 touch
+[0;31mE (130038) TOGGLE LED: : led status before is 1[0m
+[0;31mE (130038) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (130488) TOGGLE LED: : led status before is 0[0m
+[0;31mE (130488) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (130788) TOGGLE LED: : led status before is 1[0m
+[0;31mE (130788) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (131138) TOGGLE LED: : led status before is 0[0m
+[0;31mE (131138) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (131388) TOGGLE LED: : led status before is 1[0m
+[0;31mE (131388) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (131638) TOGGLE LED: : led status before is 0[0m
+[0;31mE (131638) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (131838) TOGGLE LED: : led status before is 1[0m
+[0;31mE (131838) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (132088) TOGGLE LED: : led status before is 0[0m
+[0;31mE (132088) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (132338) TOGGLE LED: : led status before is 1[0m
+[0;31mE (132338) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (132588) TOGGLE LED: : led status before is 0[0m
+[0;31mE (132588) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (132838) TOGGLE LED: : led status before is 1[0m
+[0;31mE (132838) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (133088) TOGGLE LED: : led status before is 0[0m
+[0;31mE (133088) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (133338) TOGGLE LED: : led status before is 1[0m
+[0;31mE (133338) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (133588) TOGGLE LED: : led status before is 0[0m
+[0;31mE (133588) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (133838) TOGGLE LED: : led status before is 1[0m
+[0;31mE (133838) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (134088) TOGGLE LED: : led status before is 0[0m
+[0;31mE (134088) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (134338) TOGGLE LED: : led status before is 1[0m
+[0;31mE (134338) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (134538) TOGGLE LED: : led status before is 0[0m
+[0;31mE (134538) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (134788) TOGGLE LED: : led status before is 1[0m
+[0;31mE (134788) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (135088) TOGGLE LED: : led status before is 0[0m
+[0;31mE (135088) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (135338) TOGGLE LED: : led status before is 1[0m
+[0;31mE (135338) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (135588) TOGGLE LED: : led status before is 0[0m
+[0;31mE (135588) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (135838) TOGGLE LED: : led status before is 1[0m
+[0;31mE (135838) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (136088) TOGGLE LED: : led status before is 0[0m
+[0;31mE (136088) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (136338) TOGGLE LED: : led status before is 1[0m
+[0;31mE (136338) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (136638) TOGGLE LED: : led status before is 0[0m
+[0;31mE (136638) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (136888) TOGGLE LED: : led status before is 1[0m
+[0;31mE (136888) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (137238) TOGGLE LED: : led status before is 0[0m
+[0;31mE (137238) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (137538) TOGGLE LED: : led status before is 1[0m
+[0;31mE (137538) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (137838) TOGGLE LED: : led status before is 0[0m
+[0;31mE (137838) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (138088) TOGGLE LED: : led status before is 1[0m
+[0;31mE (138088) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (138338) TOGGLE LED: : led status before is 0[0m
+[0;31mE (138338) TOGGLE LED: : led status after is 1[0m
+1 touch
+[0;31mE (138938) TOGGLE LED: : led status before is 1[0m
+[0;31mE (138938) TOGGLE LED: : led status after is 0[0m
+1 touch
+[0;31mE (139088) TOGGLE LED: : led status before is 0[0m
+[0;31mE (139088) TOGGLE LED: : led status after is 1[0m
+1 touch
+[0;31mE (139238) TOGGLE LED: : led status before is 1[0m
+[0;31mE (139238) TOGGLE LED: : led status after is 0[0m
+1 touch
+[0;31mE (139388) TOGGLE LED: : led status before is 0[0m
+[0;31mE (139388) TOGGLE LED: : led status after is 1[0m
+1 touch
+[0;31mE (139538) TOGGLE LED: : led status before is 1[0m
+[0;31mE (139538) TOGGLE LED: : led status after is 0[0m
+1 touch
+[0;31mE (139688) TOGGLE LED: : led status before is 0[0m
+[0;31mE (139688) TOGGLE LED: : led status after is 1[0m
+1 touch
+[0;31mE (139838) TOGGLE LED: : led status before is 1[0m
+[0;31mE (139838) TOGGLE LED: : led status after is 0[0m
+1 touch
+[0;31mE (139988) TOGGLE LED: : led status before is 0[0m
+[0;31mE (139988) TOGGLE LED: : led status after is 1[0m
+1 touch
+[0;31mE (140138) TOGGLE LED: : led status before is 1[0m
+[0;31mE (140138) TOGGLE LED: : led status after is 0[0m
+1 touch
+[0;31mE (140288) TOGGLE LED: : led status before is 0[0m
+[0;31mE (140288) TOGGLE LED: : led status after is 1[0m
+1 touch
+[0;31mE (140438) TOGGLE LED: : led status before is 1[0m
+[0;31mE (140438) TOGGLE LED: : led status after is 0[0m
+1 touch
+[0;31mE (140588) TOGGLE LED: : led status before is 0[0m
+[0;31mE (140588) TOGGLE LED: : led status after is 1[0m
+1 touch
+[0;31mE (140738) TOGGLE LED: : led status before is 1[0m
+[0;31mE (140738) TOGGLE LED: : led status after is 0[0m
+1 touch
+[0;31mE (140888) TOGGLE LED: : led status before is 0[0m
+[0;31mE (140888) TOGGLE LED: : led status after is 1[0m
+1 touch
+[0;31mE (141038) TOGGLE LED: : led status before is 1[0m
+[0;31mE (141038) TOGGLE LED: : led status after is 0[0m
+1 touch
+[0;31mE (141188) TOGGLE LED: : led status before is 0[0m
+[0;31mE (141188) TOGGLE LED: : led status after is 1[0m
+1 touch
+[0;31mE (141338) TOGGLE LED: : led status before is 1[0m
+[0;31mE (141338) TOGGLE LED: : led status after is 0[0m
+1 touch
+[0;31mE (141488) TOGGLE LED: : led status before is 0[0m
+[0;31mE (141488) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (141938) TOGGLE LED: : led status before is 1[0m
+[0;31mE (141938) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (142088) TOGGLE LED: : led status before is 0[0m
+[0;31mE (142088) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (142238) TOGGLE LED: : led status before is 1[0m
+[0;31mE (142238) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (142388) TOGGLE LED: : led status before is 0[0m
+[0;31mE (142388) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (142538) TOGGLE LED: : led status before is 1[0m
+[0;31mE (142538) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (142688) TOGGLE LED: : led status before is 0[0m
+[0;31mE (142688) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (142838) TOGGLE LED: : led status before is 1[0m
+[0;31mE (142838) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (142988) TOGGLE LED: : led status before is 0[0m
+[0;31mE (142988) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (143138) TOGGLE LED: : led status before is 1[0m
+[0;31mE (143138) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (143288) TOGGLE LED: : led status before is 0[0m
+[0;31mE (143288) TOGGLE LED: : led status after is 1[0m
+1 touch
+[0;31mE (143438) TOGGLE LED: : led status before is 1[0m
+[0;31mE (143438) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (143538) TOGGLE LED: : led status before is 0[0m
+[0;31mE (143538) TOGGLE LED: : led status after is 1[0m
+1 touch
+[0;31mE (143688) TOGGLE LED: : led status before is 1[0m
+[0;31mE (143688) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (143788) TOGGLE LED: : led status before is 0[0m
+[0;31mE (143788) TOGGLE LED: : led status after is 1[0m
+1 touch
+[0;31mE (143938) TOGGLE LED: : led status before is 1[0m
+[0;31mE (143938) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (144038) TOGGLE LED: : led status before is 0[0m
+[0;31mE (144038) TOGGLE LED: : led status after is 1[0m
+1 touch
+[0;31mE (144188) TOGGLE LED: : led status before is 1[0m
+[0;31mE (144188) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (144288) TOGGLE LED: : led status before is 0[0m
+[0;31mE (144288) TOGGLE LED: : led status after is 1[0m
+1 touch
+[0;31mE (144438) TOGGLE LED: : led status before is 1[0m
+[0;31mE (144438) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (144538) TOGGLE LED: : led status before is 0[0m
+[0;31mE (144538) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (144688) TOGGLE LED: : led status before is 1[0m
+[0;31mE (144688) TOGGLE LED: : led status after is 0[0m
+1 touch
+[0;31mE (144838) TOGGLE LED: : led status before is 0[0m
+[0;31mE (144838) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (144938) TOGGLE LED: : led status before is 1[0m
+[0;31mE (144938) TOGGLE LED: : led status after is 0[0m
+1 touch
+[0;31mE (145088) TOGGLE LED: : led status before is 0[0m
+[0;31mE (145088) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (145188) TOGGLE LED: : led status before is 1[0m
+[0;31mE (145188) TOGGLE LED: : led status after is 0[0m
+1 touch
+[0;31mE (145338) TOGGLE LED: : led status before is 0[0m
+[0;31mE (145338) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (145438) TOGGLE LED: : led status before is 1[0m
+[0;31mE (145438) TOGGLE LED: : led status after is 0[0m
+1 touch
+[0;31mE (145588) TOGGLE LED: : led status before is 0[0m
+[0;31mE (145588) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (145688) TOGGLE LED: : led status before is 1[0m
+[0;31mE (145688) TOGGLE LED: : led status after is 0[0m
+1 touch
+[0;31mE (145838) TOGGLE LED: : led status before is 0[0m
+[0;31mE (145838) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (145938) TOGGLE LED: : led status before is 1[0m
+[0;31mE (145938) TOGGLE LED: : led status after is 0[0m
+1 touch
+[0;31mE (146088) TOGGLE LED: : led status before is 0[0m
+[0;31mE (146088) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (146188) TOGGLE LED: : led status before is 1[0m
+[0;31mE (146188) TOGGLE LED: : led status after is 0[0m
+1 touch
+[0;31mE (146338) TOGGLE LED: : led status before is 0[0m
+[0;31mE (146338) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (146438) TOGGLE LED: : led status before is 1[0m
+[0;31mE (146438) TOGGLE LED: : led status after is 0[0m
+1 touch
+[0;31mE (146588) TOGGLE LED: : led status before is 0[0m
+[0;31mE (146588) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (146688) TOGGLE LED: : led status before is 1[0m
+[0;31mE (146688) TOGGLE LED: : led status after is 0[0m
+1 touch
+[0;31mE (146838) TOGGLE LED: : led status before is 0[0m
+[0;31mE (146838) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (146938) TOGGLE LED: : led status before is 1[0m
+[0;31mE (146938) TOGGLE LED: : led status after is 0[0m
+1 touch
+[0;31mE (147088) TOGGLE LED: : led status before is 0[0m
+[0;31mE (147088) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (147188) TOGGLE LED: : led status before is 1[0m
+[0;31mE (147188) TOGGLE LED: : led status after is 0[0m
+1 touch
+[0;31mE (147338) TOGGLE LED: : led status before is 0[0m
+[0;31mE (147338) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (147438) TOGGLE LED: : led status before is 1[0m
+[0;31mE (147438) TOGGLE LED: : led status after is 0[0m
+1 touch
+[0;31mE (147588) TOGGLE LED: : led status before is 0[0m
+[0;31mE (147588) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (147688) TOGGLE LED: : led status before is 1[0m
+[0;31mE (147688) TOGGLE LED: : led status after is 0[0m
+1 touch
+[0;31mE (147838) TOGGLE LED: : led status before is 0[0m
+[0;31mE (147838) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (147938) TOGGLE LED: : led status before is 1[0m
+[0;31mE (147938) TOGGLE LED: : led status after is 0[0m
+1 touch
+[0;31mE (148088) TOGGLE LED: : led status before is 0[0m
+[0;31mE (148088) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (148188) TOGGLE LED: : led status before is 1[0m
+[0;31mE (148188) TOGGLE LED: : led status after is 0[0m
+1 touch
+[0;31mE (148338) TOGGLE LED: : led status before is 0[0m
+[0;31mE (148338) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (148438) TOGGLE LED: : led status before is 1[0m
+[0;31mE (148438) TOGGLE LED: : led status after is 0[0m
+1 touch
+[0;31mE (148588) TOGGLE LED: : led status before is 0[0m
+[0;31mE (148588) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (148688) TOGGLE LED: : led status before is 1[0m
+[0;31mE (148688) TOGGLE LED: : led status after is 0[0m
+1 touch
+[0;31mE (148838) TOGGLE LED: : led status before is 0[0m
+[0;31mE (148838) TOGGLE LED: : led status after is 1[0m
+1 touch
+[0;31mE (149238) TOGGLE LED: : led status before is 1[0m
+[0;31mE (149238) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (149338) TOGGLE LED: : led status before is 0[0m
+[0;31mE (149338) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (149488) TOGGLE LED: : led status before is 1[0m
+[0;31mE (149488) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (149638) TOGGLE LED: : led status before is 0[0m
+[0;31mE (149638) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (149788) TOGGLE LED: : led status before is 1[0m
+[0;31mE (149788) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (150288) TOGGLE LED: : led status before is 0[0m
+[0;31mE (150288) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (150438) TOGGLE LED: : led status before is 1[0m
+[0;31mE (150438) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (150588) TOGGLE LED: : led status before is 0[0m
+[0;31mE (150588) TOGGLE LED: : led status after is 1[0m
+1 touch
+[0;31mE (150838) TOGGLE LED: : led status before is 1[0m
+[0;31mE (150838) TOGGLE LED: : led status after is 0[0m
+1 touch
+[0;31mE (150988) TOGGLE LED: : led status before is 0[0m
+[0;31mE (150988) TOGGLE LED: : led status after is 1[0m
+1 touch
+[0;31mE (151138) TOGGLE LED: : led status before is 1[0m
+[0;31mE (151138) TOGGLE LED: : led status after is 0[0m
+1 touch
+[0;31mE (151288) TOGGLE LED: : led status before is 0[0m
+[0;31mE (151288) TOGGLE LED: : led status after is 1[0m
+1 touch
+[0;31mE (151438) TOGGLE LED: : led status before is 1[0m
+[0;31mE (151438) TOGGLE LED: : led status after is 0[0m
+1 touch
+[0;31mE (151588) TOGGLE LED: : led status before is 0[0m
+[0;31mE (151588) TOGGLE LED: : led status after is 1[0m
+1 touch
+[0;31mE (151738) TOGGLE LED: : led status before is 1[0m
+[0;31mE (151738) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (151988) TOGGLE LED: : led status before is 0[0m
+[0;31mE (151988) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (152138) TOGGLE LED: : led status before is 1[0m
+[0;31mE (152138) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (152288) TOGGLE LED: : led status before is 0[0m
+[0;31mE (152288) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (152438) TOGGLE LED: : led status before is 1[0m
+[0;31mE (152438) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (152588) TOGGLE LED: : led status before is 0[0m
+[0;31mE (152588) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (152738) TOGGLE LED: : led status before is 1[0m
+[0;31mE (152738) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (152888) TOGGLE LED: : led status before is 0[0m
+[0;31mE (152888) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (153038) TOGGLE LED: : led status before is 1[0m
+[0;31mE (153038) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (153188) TOGGLE LED: : led status before is 0[0m
+[0;31mE (153188) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (153338) TOGGLE LED: : led status before is 1[0m
+[0;31mE (153338) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (153488) TOGGLE LED: : led status before is 0[0m
+[0;31mE (153488) TOGGLE LED: : led status after is 1[0m
+4 touch
+[0;31mE (153638) TOGGLE LED: : led status before is 1[0m
+[0;31mE (153638) TOGGLE LED: : led status after is 0[0m
+4 touch
+[0;31mE (153788) TOGGLE LED: : led status before is 0[0m
+[0;31mE (153788) TOGGLE LED: : led status after is 1[0m

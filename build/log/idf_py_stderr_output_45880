@@ -1,0 +1,24 @@
+[0;33m--- esp-idf-monitor 1.3.4 on /dev/ttyUSB0 115200 ---[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H ---[0m
+[0;33mStack dump detected[0m
+[0;33m0x42007d00: gpio_ll_get_level at /home/phuongnt/esp/esp-idf/components/hal/esp32c3/include/hal/gpio_ll.h:316
+ (inlined by) gpio_get_level at /home/phuongnt/esp/esp-idf/components/driver/gpio/gpio.c:244
+[0m
+[0;33m0x4200725c: button_task at /home/phuongnt/ESP32c3_test_touch/main/main.c:123
+[0m
+[0;33m0x40385a96: vPortTaskWrapper at /home/phuongnt/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:205
+[0m
+[0;33m0x42007d00: gpio_ll_get_level at /home/phuongnt/esp/esp-idf/components/hal/esp32c3/include/hal/gpio_ll.h:316
+ (inlined by) gpio_get_level at /home/phuongnt/esp/esp-idf/components/driver/gpio/gpio.c:244
+[0m
+[0;33m0x42007254: button_task at /home/phuongnt/ESP32c3_test_touch/main/main.c:115
+[0m
+[0;33m0x40385a96: vPortTaskWrapper at /home/phuongnt/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:205
+[0m
+[0;33m0x4200725e: button_task at /home/phuongnt/ESP32c3_test_touch/main/main.c:131
+[0m
+[0;33m0x4200725c: button_task at /home/phuongnt/ESP32c3_test_touch/main/main.c:123
+[0m
+[0;33m0x40385a96: vPortTaskWrapper at /home/phuongnt/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:205
+[0m
+[0m

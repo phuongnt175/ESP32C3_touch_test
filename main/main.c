@@ -24,7 +24,17 @@
 #define LED_4_BIT 3
 
 #define TOUCH_NUM 4
-#define LONG_PRESS_DURATION 500 / portTICK_PERIOD_MS // Adjust as needed
+#define LONG_PRESS_DURATION 100 / portTICK_PERIOD_MS // Adjust as needed
+
+// Define button states
+typedef enum {
+    BUTTON_RELEASED,
+    BUTTON_PRESSED,
+    BUTTON_HOLD,
+} ButtonState;
+
+static const int touch_pins[TOUCH_NUM] = {TOUCH_PIN1, TOUCH_PIN2, TOUCH_PIN3, TOUCH_PIN4};
+static const int led_pins[TOUCH_NUM] = {LED_1, LED_2, LED_3, LED_4};
 
 // Global status variable to store LED states
 uint8_t led_status = 0;  
@@ -166,43 +176,52 @@ static void toggle_led(int led_pin)
     set_led_state(led_pin, !current_state);
 }
 
-// Task to continuously check button presses and toggle LEDs
 static void button_task(void *pvParameter)
 {
+    TickType_t press_start_time[TOUCH_NUM] = {0};
+    bool led_toggled[TOUCH_NUM] = {false};
+
     while (1)
     {
         if (xSemaphoreTake(xMutex, portMAX_DELAY))
         {
-            // Toggle LED 1 based on button 1
-            if (gpio_get_level(TOUCH_PIN1) == 0)
+            for (int i = 0; i < TOUCH_NUM; i++)
             {
-                printf("1 touch\n");
-                toggle_led(LED_1);
-                vTaskDelay(LONG_PRESS_DURATION);
-            }
+                if (gpio_get_level(touch_pins[i]) == 0)
+                {
+                    // Button is pressed
+                    if (!led_toggled[i])
+                    {
+                        // Button was just pressed, and the LED state has not been toggled
+                        printf("%d touch (press)\n", i + 1);
+                        toggle_led(led_pins[i]);  // Toggle the LED state only once
+                        led_toggled[i] = true;
+                    }
 
-            // Toggle LED 2 based on button 2
-            if (gpio_get_level(TOUCH_PIN2) == 0)
-            {
-                printf("2 touch\n");
-                toggle_led(LED_2);
-                vTaskDelay(LONG_PRESS_DURATION);
-            }
-
-            // Toggle LED 3 based on button 3
-            if (gpio_get_level(TOUCH_PIN3) == 0)
-            {
-                printf("3 touch\n");
-                toggle_led(LED_3);
-                vTaskDelay(LONG_PRESS_DURATION);
-            }
-
-            // Toggle LED 4 based on button 4
-            if (gpio_get_level(TOUCH_PIN4) == 0)
-            {
-                printf("4 touch\n");
-                toggle_led(LED_4);
-                vTaskDelay(LONG_PRESS_DURATION);
+                    TickType_t press_duration = xTaskGetTickCount() - press_start_time[i];
+                    if (press_duration >= LONG_PRESS_DURATION && !led_toggled[i])
+                    {
+                        printf("%d touch (hold)\n", i + 1);
+                        // Perform actions for holding the button
+                        // Add your code here if needed
+                    }
+                }
+                else
+                {
+                    // Button is released
+                    if (press_start_time[i] != 0)
+                    {
+                        // Button was released
+                        printf("%d touch (release)\n", i + 1);
+                        press_start_time[i] = 0;
+                        led_toggled[i] = false;  // Reset the LED state for the next press
+                    }
+                }
+                // Update the press start time if the button is pressed
+                if (gpio_get_level(touch_pins[i]) == 0 && press_start_time[i] == 0)
+                {
+                    press_start_time[i] = xTaskGetTickCount();
+                }
             }
 
             xSemaphoreGive(xMutex);
@@ -211,6 +230,8 @@ static void button_task(void *pvParameter)
         vTaskDelay(50 / portTICK_PERIOD_MS);
     }
 }
+
+
 
 void app_main(void)
 {

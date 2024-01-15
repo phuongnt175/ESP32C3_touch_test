@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdbool.h>
 #include <inttypes.h>
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
@@ -8,13 +9,13 @@
 #include "driver/gpio.h"
 #include "esp_rom_gpio.h"
 
-#define TOUCH_PIN_1  GPIO_NUM_3
-#define TOUCH_PIN_2  GPIO_NUM_19
-#define TOUCH_PIN_3  GPIO_NUM_1
-#define TOUCH_PIN_4  GPIO_NUM_0
+#define TOUCH_PIN1  GPIO_NUM_3
+#define TOUCH_PIN2  GPIO_NUM_19
+#define TOUCH_PIN3  GPIO_NUM_1
+#define TOUCH_PIN4  GPIO_NUM_0
 
 #define LED_1 GPIO_NUM_4
-#define LED_2 GPIO_NUM_2 //io18 replace by io2
+#define LED_2 GPIO_NUM_18 //io18 replace by io2
 #define LED_3 GPIO_NUM_6
 #define LED_4 GPIO_NUM_7
 
@@ -24,7 +25,7 @@
 #define LED_4_BIT 3
 
 #define TOUCH_NUM 4
-#define LONG_PRESS_DURATION (50 / portTICK_PERIOD_MS) // Adjust as needed
+#define LONG_PRESS_DURATION (100 / portTICK_PERIOD_MS) // Adjust as needed
 
 // Define button states
 typedef enum {
@@ -33,7 +34,7 @@ typedef enum {
     BUTTON_HOLD,
 } ButtonState;
 
-static const int touch_pins[TOUCH_NUM] = {TOUCH_PIN_1, TOUCH_PIN_2, TOUCH_PIN_3, TOUCH_PIN_4};
+static const int touch_pins[TOUCH_NUM] = {TOUCH_PIN1, TOUCH_PIN2, TOUCH_PIN3, TOUCH_PIN4};
 static const int led_pins[TOUCH_NUM] = {LED_1, LED_2, LED_3, LED_4};
 
 // Global status variable to store LED states
@@ -43,15 +44,16 @@ SemaphoreHandle_t xMutex;
 
 void gpio_init()
 {
-    esp_rom_gpio_pad_select_gpio(TOUCH_PIN_1);
-    esp_rom_gpio_pad_select_gpio(TOUCH_PIN_2);
-    esp_rom_gpio_pad_select_gpio(TOUCH_PIN_3);
-    esp_rom_gpio_pad_select_gpio(TOUCH_PIN_4);
+    esp_rom_gpio_pad_select_gpio(TOUCH_PIN1);
+    esp_rom_gpio_pad_select_gpio(TOUCH_PIN2);
+    esp_rom_gpio_pad_select_gpio(TOUCH_PIN3);
+    esp_rom_gpio_pad_select_gpio(TOUCH_PIN4);
 
-    gpio_set_direction(TOUCH_PIN_1, GPIO_MODE_INPUT);
-    gpio_set_direction(TOUCH_PIN_2, GPIO_MODE_INPUT);
-    gpio_set_direction(TOUCH_PIN_3, GPIO_MODE_INPUT);
-    gpio_set_direction(TOUCH_PIN_4, GPIO_MODE_INPUT);
+    gpio_set_direction(TOUCH_PIN1, GPIO_MODE_INPUT);
+    gpio_set_direction(TOUCH_PIN2, GPIO_MODE_INPUT);
+    gpio_set_direction(TOUCH_PIN3, GPIO_MODE_INPUT);
+    gpio_set_direction(TOUCH_PIN4, GPIO_MODE_INPUT);
+
 }
 
 void led_init()
@@ -65,7 +67,6 @@ void led_init()
     gpio_set_direction(LED_2, GPIO_MODE_OUTPUT);
     gpio_set_direction(LED_3, GPIO_MODE_OUTPUT);
     gpio_set_direction(LED_4, GPIO_MODE_OUTPUT);
-
 }
 
 // Function to set the state of an LED in the global status variable
@@ -78,10 +79,7 @@ void set_led_state(int led, bool state)
     case LED_1:
         bit_position = LED_1_BIT;
         break;
-    case LED_2:            // gpio_set_level(LED_2, 1);
-            // vTaskDelay(50);
-            // gpio_set_level(LED_2, 0);
-            // vTaskDelay(50);
+    case LED_2:
         bit_position = LED_2_BIT;
         break;
     case LED_3:
@@ -142,23 +140,6 @@ static void toggle_led(int led_pin)
     set_led_state(led_pin, !current_state);
 }
 
-static void blink_all_led(void *pvParameter)
-{
-    while(1)
-    {
-        set_led_state(LED_1, 0);
-        set_led_state(LED_2, 0);
-        set_led_state(LED_3, 0);
-        set_led_state(LED_4, 0);
-        vTaskDelay(100 / portTICK_PERIOD_MS);
-        set_led_state(LED_1, 1);
-        set_led_state(LED_2, 1);
-        set_led_state(LED_3, 1);
-        set_led_state(LED_4, 1);
-        vTaskDelay(100 / portTICK_PERIOD_MS);
-    }
-}
-
 static void button_task(void *pvParameter)
 {
     TickType_t press_start_time[TOUCH_NUM] = {0};
@@ -170,6 +151,7 @@ static void button_task(void *pvParameter)
         {
             for (int i = 0; i < TOUCH_NUM; i++)
             {
+                //ESP_LOGI("MAIN", "touch %d get status: %d", i, gpio_get_level(touch_pins[i]));
                 if (gpio_get_level(touch_pins[i]) == 0)
                 {
                     // Button is pressed
@@ -179,7 +161,6 @@ static void button_task(void *pvParameter)
                         printf("%d touch (press)\n", i + 1);
                         toggle_led(led_pins[i]);  // Toggle the LED state only once
                         led_toggled[i] = true;
-                        ESP_LOGE("TAG","led state is %d", get_led_state(led_pins[i]));
                     }
 
                     TickType_t press_duration = xTaskGetTickCount() - press_start_time[i];
@@ -199,7 +180,6 @@ static void button_task(void *pvParameter)
                         printf("%d touch (release)\n", i + 1);
                         press_start_time[i] = 0;
                         led_toggled[i] = false;  // Reset the LED state for the next press
-                        ESP_LOGE("TAG","led state is %d", get_led_state(led_pins[i]));
                     }
                 }
                 // Update the press start time if the button is pressed
@@ -208,8 +188,10 @@ static void button_task(void *pvParameter)
                     press_start_time[i] = xTaskGetTickCount();
                 }
             }
+
             xSemaphoreGive(xMutex);
         }
+
         vTaskDelay(50 / portTICK_PERIOD_MS);
     }
 }
@@ -220,10 +202,9 @@ void app_main(void)
 {
     gpio_init();
     led_init();
-
     xMutex = xSemaphoreCreateMutex();
-    
-    /* Start task to read values by pads. */
+
+    vTaskDelay( 1000 / portTICK_PERIOD_MS);
+    //xTaskCreate(&tp_example_read_task, "touch_pad_read_task", 4096, NULL, 5, NULL);
     xTaskCreate(&button_task, "button_task", 4096, NULL, 5, NULL);
-    //xTaskCreate(&blink_all_led, "blink_all_led", 4096, NULL, 5, NULL);
 } 

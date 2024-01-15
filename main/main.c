@@ -14,7 +14,7 @@
 #define TOUCH_PIN_4  GPIO_NUM_0
 
 #define LED_1 GPIO_NUM_4
-#define LED_2 GPIO_NUM_2 //io18?
+#define LED_2 GPIO_NUM_2 //io18 replace by io2
 #define LED_3 GPIO_NUM_6
 #define LED_4 GPIO_NUM_7
 

@@ -58,6 +58,8 @@ void gpio_init()
 
 void led_init()
 {
+    gpio_reset_pin(LED_2); //reset io18 to enable use for GPIO peripheral
+
     esp_rom_gpio_pad_select_gpio(LED_1);
     esp_rom_gpio_pad_select_gpio(LED_2);
     esp_rom_gpio_pad_select_gpio(LED_3);
@@ -205,6 +207,5 @@ void app_main(void)
     xMutex = xSemaphoreCreateMutex();
 
     vTaskDelay( 1000 / portTICK_PERIOD_MS);
-    //xTaskCreate(&tp_example_read_task, "touch_pad_read_task", 4096, NULL, 5, NULL);
     xTaskCreate(&button_task, "button_task", 4096, NULL, 5, NULL);
 } 
